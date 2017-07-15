@@ -1,0 +1,15 @@
+.header {
+  &-container {
+    // background-color: rgba(10,10,10,0.85);
+    height: 60px;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    max-width: 100%;
+  }
+
+  &-logo {
+    height: 30px;
+    margin-left: 25px;
+    width: 161px;
+  }
+}
