@@ -6,11 +6,12 @@ import {
   Stepper,
   StepLabel,
 } from 'material-ui/Stepper';
+import muiTheme from '../../shared-components/mui/muiTheme';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-// import AccountTab from './pages/account/account';
-// import StatsTab from './pages/stats/stats';
-// import FriendsTab from './pages/friends/friends';
+import Goal from './steps/goal/goal';
+import Info from './steps/info/info';
+import Metrics from './steps/metrics/metrics';
 import './calculator.css';
 
 class Calculator extends Component {
@@ -56,18 +57,19 @@ class Calculator extends Component {
     const contentStyle = {margin: '0 16px'};
 
     return (
-      <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-        <Stepper activeStep={stepIndex}>
-          <Step>
-            <StepLabel>Select campaign settings</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Create an ad group</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Create an ad</StepLabel>
-          </Step>
-        </Stepper>
+      <MuiThemeProvider muiTheme={muiTheme}>
+        <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+          <Stepper activeStep={stepIndex}>
+            <Step>
+              <StepLabel>Select campaign settings</StepLabel>
+            </Step>
+            <Step>
+              <StepLabel>Create an ad group</StepLabel>
+            </Step>
+            <Step>
+              <StepLabel>Create an ad</StepLabel>
+            </Step>
+          </Stepper>
         <div style={contentStyle}>
           {finished ? (
             <p>
@@ -101,6 +103,7 @@ class Calculator extends Component {
           )}
         </div>
       </div>
+      </MuiThemeProvider>
     );
   }
 }

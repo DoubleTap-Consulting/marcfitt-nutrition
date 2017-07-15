@@ -8,6 +8,7 @@ import asyncLoader from '../../shared-components/asyncComponentLoader';
 import './app.css';
 
 const asyncLanding = asyncLoader(() => require('../../containers/landing/landing'));
+const asyncCalculator = asyncLoader(() => require('../../containers/calculator/calculator'));
 
 class App extends Component {
   static get propTypes() {
@@ -21,6 +22,7 @@ class App extends Component {
         <div className="app-container row collapse">
           <Switch>
             <Route path="/" component={asyncLanding} />
+            <Route path="/calculator" component={asyncCalculator} />
           </Switch>
         </div>
         {/*<Footer />*/}
