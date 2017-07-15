@@ -8,10 +8,10 @@ import {
 } from 'material-ui/Stepper';
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
-import AccountTab from './pages/account/account';
-import StatsTab from './pages/stats/stats';
-import FriendsTab from './pages/friends/friends';
-import './profile.css';
+// import AccountTab from './pages/account/account';
+// import StatsTab from './pages/stats/stats';
+// import FriendsTab from './pages/friends/friends';
+import './calculator.css';
 
 class Calculator extends Component {
   constructor(props, context) {
