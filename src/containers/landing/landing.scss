@@ -1,5 +1,33 @@
 .landing {
   &-container {
-    // width: 75%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &-paragraph {
+    animation: .20s ease-in paragraphFadeIn;
+
+    &-sub1 {
+      animation: .40s ease-in 0s 1 normal none paragraphFadeIn;
+    }
+  }
+  
+  @keyframes paragraphFadeIn {
+    0% { 
+      opacity: 0;
+      transform: translateY(-250px)
+    }
+    25% { transform: translateY(-50px) }
+    50% {
+      opacity: 0;
+      transform: translateY(-25px)
+    }
+    75% { transform: translateY(-10px) }
+    100% {
+      opacity: 1;
+      transform: translateY(0px)
+    }
   }
 }
+

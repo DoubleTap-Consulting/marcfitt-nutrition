@@ -8,11 +8,11 @@ class Landing extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <div className="landing-container">
+        <div className="columns small-12 landing-container">
           <div className="row align-center">
             <div className="columns small-12 medium-10 large-6">
-              <p>The Nutrition Planner is Marc’s revolutionary tool that will allow you to plan your own diet, so you can choose the foods that are most convenient, and taste best to you!</p>
-              <p>You’ll have the ability to calculate your caloric needs with ease, thanks to the built in calorie calculator. Enter your height, weight, goal, and smoothly transition these stats into the Planner so you can begin building your diet.</p>
+              <p className="landing-paragraph">The Nutrition Planner is Marc’s revolutionary tool that will allow you to plan your own diet, so you can choose the foods that are most convenient, and taste best to you!</p>
+              <p className="landing-paragraph-sub1">You’ll have the ability to calculate your caloric needs with ease, thanks to the built in calorie calculator. Enter your height, weight, goal, and smoothly transition these stats into the Planner so you can begin building your diet.</p>
               <div className="row align-center landing-start">
                 <div className="small-8 columns">
                   <RaisedButton
