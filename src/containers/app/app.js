@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-// import Header from '../header/header';
+import Header from '../header/header';
 // import Footer from '../footer/footer';
 import asyncLoader from '../../shared-components/asyncComponentLoader';
 import './app.css';
@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {/*<Header />*/}
+        <Header />
         <div className="app-container">
           <Switch>
             <Route path="/" component={asyncLanding} />
