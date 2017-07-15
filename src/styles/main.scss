@@ -6,10 +6,10 @@
 // @import "buttons";
 @import 'node_modules/foundation-sites/scss/foundation';
 
-// @include foundation-global-styles;
+@include foundation-global-styles;
 // @include foundation-grid;
-// @include foundation-flex-grid;
-// @include foundation-flex-classes;
+@include foundation-flex-grid;
+@include foundation-flex-classes;
 // @include foundation-typography;
 // @include foundation-forms;
 // @include foundation-button;
