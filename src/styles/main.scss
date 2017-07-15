@@ -4,12 +4,12 @@
 // @import "typography";
 // @import "utilityClasses";
 // @import "buttons";
-@import 'node_modules/foundation-sites/scss/foundation';
+@import '../../node_modules/foundation-sites/scss/foundation.scss';
 
 @include foundation-global-styles;
 // @include foundation-grid;
 @include foundation-flex-grid;
-// @include foundation-flex-classes;
+@include foundation-flex-classes;
 // @include foundation-typography;
 // @include foundation-forms;
 // @include foundation-button;
