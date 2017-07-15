@@ -17,11 +17,13 @@ injectTapEventPlugin();
 
 // Create asyncLoader imports here
 const asyncApp = asyncLoader(() => require('./containers/app/app'));
+const asyncCalculator = asyncLoader(() => require('./containers/calculator/calculator'));
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={asyncApp} />
+      <Route path="/calculator" component={asyncCalculator} />
     </Router>
   </Provider>,
   document.getElementById('root')
