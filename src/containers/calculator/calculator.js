@@ -22,10 +22,14 @@ class Calculator extends Component {
     this.state = {
       finished: false,
       stepIndex: 0, 
-      gender: 'Male',
-      age: 25,
-      height: 120,
-      weight: 160,
+      gender: undefined,
+      age: undefined,
+      heightFeet: undefined,
+      heightCm: undefined,
+      heightInches: undefined,
+      heightMetric: 'cm',
+      weight: undefined,
+      weightMetric: 'kg',
       macros: {},
       totalCalories: 0,
       maintenance: 0,
@@ -55,8 +59,12 @@ class Calculator extends Component {
           handleChange={this.handleChange}
           gender={this.state.gender}
           age={this.state.age}
-          height={this.state.height}
+          heightFeet={this.state.heightFeet}
+          heightInches={this.state.heightInches}
+          heightCm={this.state.heightCm}
+          heightMetric={this.state.heightMetric}
           weight={this.state.weight}
+          weightMetric={this.state.weightMetric}
         />
       case 1:
         return <Goal handleChange={this.handleChange} />
@@ -67,7 +75,8 @@ class Calculator extends Component {
 
 
   handleChange = (type, value) => {
-    console.log()
+    console.log('type', type, ' with value: ', value)
+    console.log('this.state', this.state)
     const newState = {
       [type]: value
     }
@@ -106,12 +115,22 @@ class Calculator extends Component {
 
     if (window.matchMedia('screen and (max-width: 568px)').matches) {
       return (
-        <div className="align-center" style={{maxWidth: '400px'}}>
+        <div style={{ width: '100%' }}>
           <Stepper activeStep={stepIndex} orientation="vertical">
             <Step>
               <StepLabel>Tell us about yourself.</StepLabel>
               <StepContent>
-                <Info handleChange={this.handleChange} gender={this.state.gender} />
+                <Info 
+                  handleChange={this.handleChange}
+                  gender={this.state.gender}
+                  age={this.state.age}
+                  heightFeet={this.state.heightFeet}
+                  heightInches={this.state.heightInches}
+                  heightCm={this.state.heightCm}
+                  heightMetric={this.state.heightMetric}
+                  weight={this.state.weight}
+                  weightMetric={this.state.weightMetric}
+                />
                 {this.renderStepActions(0)}
               </StepContent>
             </Step>
@@ -119,6 +138,7 @@ class Calculator extends Component {
               <StepLabel>What are your goals?</StepLabel>
               <StepContent>
                 <Goal handleChange={this.handleChange} />
+                {this.renderStepActions(1)}
               </StepContent>
             </Step>
             <Step>
