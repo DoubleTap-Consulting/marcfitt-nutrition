@@ -75,8 +75,6 @@ class Calculator extends Component {
 
 
   handleChange = (type, value) => {
-    console.log('type', type, ' with value: ', value)
-    console.log('this.state', this.state)
     const newState = {
       [type]: value
     }

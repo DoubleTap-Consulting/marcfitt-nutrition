@@ -71,13 +71,13 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
             className="infoContainer-input"
             hintText="Age"
             onChange={handleAge}
-            style={{width: '125px'}}
+            style={{width: '140px'}}
           />
           <SelectField
             className="infoContainer-input"
             value={gender}
             onChange={handleGender}
-            style={{width: '125px'}}
+            style={{width: '110px'}}
             hintText={'Gender'}
           >
             <MenuItem value={'Male'} primaryText="Male" />
