@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../header/header';
+import Footer from '../footer/footer';
 // import Footer from '../footer/footer';
 import asyncLoader from '../../shared-components/asyncComponentLoader';
 import './app.css';
@@ -25,7 +26,7 @@ class App extends Component {
             <Route path="/" component={asyncLanding} />
           </Switch>
         </div>
-        {/*<Footer />*/}
+        <Footer />
       </div>
     );
   }

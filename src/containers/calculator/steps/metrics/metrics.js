@@ -2,6 +2,36 @@ import React from 'react';
 import './metrics.css';
 
 const Metrics = ({ handleChange }) => {
+  const activityLevelStore = {
+    fastCut: {
+      multiplyer: 1,
+      calories: 0
+    },
+    mediumCut: {
+      multiplyer: 1,
+      calories: 0
+    },
+    slowCut: {
+      multiplyer: 1,
+      calories: 0
+    },
+    maintain: {
+      multiplyer: 1,
+      calories: 0
+    },
+    slowBulk: {
+      multiplyer: 1,
+      calories: 0
+    },
+    mediumBulk: {
+      multiplyer: 1,
+      calories: 0
+    },
+    fastBulk:{
+      multiplyer: 1,
+      calories: 0
+    },
+  }
   const calculateBMR = () => {
     let BMR = 0;
     if (this.state.gender === 'Male') {
@@ -13,11 +43,11 @@ const Metrics = ({ handleChange }) => {
     }
 
     // Calculate maintenance calories
-    const maintenance = BMR * this.state.activityLevelMultiplyer
+    const maintenance = BMR * activityLevelStore[this.state.activityLevelMultiplyer['multiplyer']]
     handleChange('maintenance', maintenance)
 
     // Calculate total calories
-    const totalCalories = maintenance + this.state.activityLevelCalories
+    const totalCalories = maintenance + activityLevelStore[this.state.activityLevelCalories['calories']]
     handleChange('totalCalories', totalCalories)
 
     // Macro Breakdown
