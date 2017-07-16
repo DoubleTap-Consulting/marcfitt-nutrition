@@ -950,10 +950,6 @@ textarea {
       margin-bottom: 1.875rem; }
       .column-block > :last-child {
         margin-bottom: 0; } }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> [feature]
 
 .align-right {
   justify-content: flex-end; }
@@ -1107,8 +1103,3 @@ textarea {
     flex-direction: column; }
   .large-flex-dir-column-reverse {
     flex-direction: column-reverse; } }
-<<<<<<< HEAD
-=======
->>>>>>> [feature] MF-view2 - setup view 2 and make first actions and reducers
-=======
->>>>>>> [feature]
