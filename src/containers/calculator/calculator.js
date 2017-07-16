@@ -74,21 +74,14 @@ class Calculator extends Component {
   }
 
 
-<<<<<<< HEAD
   handleChange = (type, value, forceNext = false) => {
-=======
-  handleChange = (type, value) => {
->>>>>>> master
     const newState = {
       [type]: value
     }
     this.setState(newState)
-<<<<<<< HEAD
     if (forceNext === true) {
       this.handleNext();
     }
-=======
->>>>>>> master
   };
 
   renderStepActions(step) {
