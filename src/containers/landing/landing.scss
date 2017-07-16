@@ -3,17 +3,29 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+
+    h1 {
+      margin-bottom: 45px;
+    }
+  }
+
+  &-cta {
+    animation: .40s ease-in 0s 1 normal none fadeIn;
   }
 
   &-paragraph {
-    animation: .20s ease-in paragraphFadeIn;
+    animation: .20s ease-in fadeIn;
 
-    &-sub1 {
-      animation: .30s ease-in 0s 1 normal none paragraphFadeIn;
+    .sub1 {
+      animation: .30s ease-in 0s 1 normal none fadeIn;
+    }
+
+    &:last-of-type {
+      margin-bottom: 45px;
     }
   }
   
-  @keyframes paragraphFadeIn {
+  @keyframes fadeIn {
     0% { 
       opacity: 0;
       transform: translateY(-250px)
