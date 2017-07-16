@@ -11,7 +11,7 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
   }
 
   const handleAge = (event) => {
-    const value = parseInt(event.target.value);
+    const value = parseInt(event.target.innerHTML);
     handleChange('age', value)
   }
 
