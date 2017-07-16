@@ -90,34 +90,35 @@ class Calculator extends Component {
 
     if (window.matchMedia('screen and (max-width: 568px)').matches) {
       return (
-          <div className="align-center" style={{maxWidth: '400px'}}>
-            <Stepper activeStep={stepIndex} orientation="vertical">
-              <Step>
-                <StepLabel>Tell us about yourself.</StepLabel>
-                <StepContent>
-                  <Info handleChange={this.handleChange} gender={this.state.gender} />
-                  {this.renderStepActions(0)}
-                </StepContent>
-              </Step>
-              <Step>
-                <StepLabel>What are your goals?</StepLabel>
-                <StepContent>
-                  <Goal handleChange={this.handleChange} gender={this.state.gender} />
-                </StepContent>
-              </Step>
-              <Step>
-                <StepLabel>Results!</StepLabel>
-                <StepContent>
-                  <Metrics />
-                  {this.renderStepActions(2)}
-                </StepContent>
-              </Step>
-            </Stepper>
-          </div>
+        <div className="align-center" style={{maxWidth: '400px'}}>
+          <Stepper activeStep={stepIndex} orientation="vertical">
+            <Step>
+              <StepLabel>Tell us about yourself.</StepLabel>
+              <StepContent>
+                <Info handleChange={this.handleChange} gender={this.state.gender} />
+                {this.renderStepActions(0)}
+              </StepContent>
+            </Step>
+            <Step>
+              <StepLabel>What are your goals?</StepLabel>
+              <StepContent>
+                <Goal handleChange={this.handleChange} gender={this.state.gender} />
+              </StepContent>
+            </Step>
+            <Step>
+              <StepLabel>Results!</StepLabel>
+              <StepContent>
+                <Metrics />
+                {this.renderStepActions(2)}
+              </StepContent>
+            </Step>
+          </Stepper>
+        </div>
       )
     } else {
       return (
-          <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+        <div className="row" style={{width: '100%', marginTop: '45px'}}>
+          <div style={{width: '100%', maxWidth: 700, marginLeft: 'auto', marginRight: 'auto'}} className="text-center">
             <Stepper activeStep={stepIndex}>
               <Step>
                 <StepLabel>Tell us a little about yourself</StepLabel>
@@ -129,21 +130,22 @@ class Calculator extends Component {
                 <StepLabel>Your results!</StepLabel>
               </Step>
             </Stepper>
-          <div style={contentStyle}>
-            <div>
-              {this.getStepContent(stepIndex)}
-              <div style={{marginTop: 12}}>
-                <FlatButton
-                  label="Back"
-                  disabled={stepIndex === 0}
-                  onTouchTap={this.handlePrev}
-                  style={{marginRight: 12}}
-                />
-                <RaisedButton
-                  label={stepIndex === 2 ? 'Finish' : 'Next'}
-                  primary={true}
-                  onTouchTap={this.handleNext}
-                />
+            <div style={contentStyle}>
+              <div>
+                {this.getStepContent(stepIndex)}
+                <div style={{marginTop: 12}}>
+                  <FlatButton
+                    label="Back"
+                    disabled={stepIndex === 0}
+                    onTouchTap={this.handlePrev}
+                    style={{marginRight: 12}}
+                  />
+                  <RaisedButton
+                    label={stepIndex === 2 ? 'Finish' : 'Next'}
+                    primary={true}
+                    onTouchTap={this.handleNext}
+                  />
+                </div>
               </div>
             </div>
           </div>
