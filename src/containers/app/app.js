@@ -1,21 +1,35 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router';
-import logo from '../../logo.svg';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Header from '../header/header';
+// import Footer from '../footer/footer';
 import asyncLoader from '../../shared-components/asyncComponentLoader';
 import './app.css';
 
-const asyncCalculator = asyncLoader(() => require('../calculator/calculator'));
+const asyncLanding = asyncLoader(() => require('../../containers/landing/landing'));
 
 class App extends Component {
+  static get propTypes() {
+    return {};
+  }
+
   render() {
     return (
-      <div className="App">
-        <Switch>
-          <Route path="/calculator" component={asyncCalculator} />
-        </Switch>
+      <div className="app">
+        <Header />
+        <div className="app-container row">
+          <Switch>
+            <Route path="/" component={asyncLanding} />
+          </Switch>
+        </div>
+        {/*<Footer />*/}
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+};
+
+export default connect(mapStateToProps)(App);

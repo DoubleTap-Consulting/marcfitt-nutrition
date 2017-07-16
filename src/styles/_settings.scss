@@ -50,8 +50,8 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #CE2027,
-  secondary: #333,
+  primary: #1787FB,
+  secondary: #FDD831,
   success: #4E9A26,
   warning: #ffae00,
   alert: #AC1212,
@@ -63,7 +63,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Montserrat', sans-serif;
+$body-font-family: 'Open Sans', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -104,11 +104,11 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
-$header-font-weight: $global-weight-normal;
+$header-font-family: 'Montserrat', sans-serif;
+$header-font-weight: 900;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-color: inherit;
+$header-color: map-get($foundation-palette, 'primary');
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
