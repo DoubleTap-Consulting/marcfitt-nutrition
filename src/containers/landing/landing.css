@@ -1,7 +1,9 @@
 .landing-container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%); }
+  position: relative;
+  top: 25%; }
+  @media (max-width: 414px) {
+    .landing-container {
+      top: 10%; } }
   .landing-container h1 {
     margin-bottom: 45px; }
 
