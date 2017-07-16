@@ -22,7 +22,10 @@ class Calculator extends Component {
     this.state = {
       finished: false,
       stepIndex: 0, 
-      gender: 'Male'
+      gender: 'Male',
+      age: 25,
+      height: 120,
+      weight: 160,
     };
   }
 
@@ -44,18 +47,27 @@ class Calculator extends Component {
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
-        return <Info handleChange={this.handleChange} gender={this.state.gender} />
+        return <Info 
+          handleChange={this.handleChange}
+          gender={this.state.gender}
+          age={this.state.age}
+          height={this.state.height}
+          weight={this.state.weight}
+        />
       case 1:
-        return <Goal handleChange={this.handleChange} gender={this.state.gender} />
+        return <Goal handleChange={this.handleChange} />
       case 2:
         return <Metrics />
     }
   }
 
 
-  handleChange = (event, index, gender) => {
-    console.log('event', event)
-    this.setState({gender})
+  handleChange = (type, value) => {
+    console.log()
+    const newState = {
+      [type]: value
+    }
+    this.setState(newState)
   };
 
   renderStepActions(step) {
@@ -102,7 +114,7 @@ class Calculator extends Component {
             <Step>
               <StepLabel>What are your goals?</StepLabel>
               <StepContent>
-                <Goal handleChange={this.handleChange} gender={this.state.gender} />
+                <Goal handleChange={this.handleChange} />
               </StepContent>
             </Step>
             <Step>
