@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import buttonStyles from '../../shared-components/mui/buttonStyles';
+import { Link } from 'react-router-dom';
 import './landing.css';
 
 class Landing extends Component {
@@ -20,14 +21,15 @@ class Landing extends Component {
               <p className="landing-paragraph sub1">You’ll have the ability to calculate your caloric needs with ease, thanks to the built in calorie calculator. Enter your height, weight, goal, and smoothly transition these stats into the Planner so you can begin building your diet.</p>
             </div>
             <div className="columns small-12 text-center">
-              <RaisedButton
-                buttonStyle={buttonStyles.buttonStyle}
-                className='landing-cta'
-                labelStyle={buttonStyles.buttonLabelStyle}
-                label="Get Started"
-                secondary={false}
-                onTouchTap={this.startTap}
-              />
+              <Link to="/calculator">
+                <RaisedButton
+                  buttonStyle={buttonStyles.buttonStyle}
+                  className='landing-cta'
+                  labelStyle={buttonStyles.buttonLabelStyle}
+                  label="Get Started"
+                  secondary={false}
+                />
+              </Link>
             </div>
           </div>
         </div>

@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-// import Footer from '../footer/footer';
 import asyncLoader from '../../shared-components/asyncComponentLoader';
 import './app.css';
 

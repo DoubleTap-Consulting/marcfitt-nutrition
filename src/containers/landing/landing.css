@@ -1,6 +1,6 @@
 .landing-container {
   position: relative;
-  top: 25%; }
+  margin-top: 15%; }
   @media (max-width: 414px) {
     .landing-container {
       top: 10%; } }
