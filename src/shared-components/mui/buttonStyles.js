@@ -1,11 +1,12 @@
 const buttonStyles = {
   buttonStyle: {
-    backgroundColor: '#0188F9',
+    backgroundColor: '#1787FB',
     width: '300px'
   },
   buttonLabelStyle: {
     color: '#fff',
-    fontSize: '20px'
+    fontSize: '20px',
+    fontWeight: 'bold'
   }
 };
 
