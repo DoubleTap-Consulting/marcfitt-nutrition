@@ -18,21 +18,18 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
   const handleHeightFeet = (event) => {
     const value = parseInt(event.target.innerHTML);
 
-    // value should be in cm
     handleChange('heightFeet', value)
   }
 
   const handleHeightInches = (event) => {
     const value = parseInt(event.target.innerHTML);
 
-    // value should be in cm
     handleChange('heightInches', value)
   }
 
   const handleHeightCm = (event) => {
     const value = parseInt(event.target.innerHTML);
 
-    // value should be in cm
     handleChange('heightCm', value)
   }
 
@@ -44,7 +41,6 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
   const handleWeight = (event) => {
     const value = parseInt(event.target.innerHTML);
 
-    // value should be in kg
     handleChange('weight', value)
   }
 
@@ -61,7 +57,6 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
     return items
   }
   
-
   return (
     <div className="infoContainer align-middle align-justify">
       <h1>Personal Information</h1>

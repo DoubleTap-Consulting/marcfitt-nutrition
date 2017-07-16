@@ -1,7 +1,7 @@
 import React from 'react';
 import './metrics.css';
 
-const Metrics = ({ handleChange }) => {
+const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm, heightMetric, weight, weightMetric, macros, totalCalories, maintenance, BMR, activityLevelMultiplyer, activityLevelCalories }) => {
   const activityLevelStore = {
     fastCut: {
       multiplyer: 1,
@@ -32,45 +32,61 @@ const Metrics = ({ handleChange }) => {
       calories: 0
     },
   }
-  const calculateBMR = () => {
-    let BMR = 0;
-    if (this.state.gender === 'Male') {
-      BMR = 66.47+(13.75 * this.state.weight) + (5 * this.state.height) + (6.75 * this.state.age);
-        handleChange('BMR', BMR)
-    } else {
-      BMR = 665.09+(9.56 * this.state.weight) + (1.84 * this.state.height) - (4.67 * this.state.age)
-      handleChange('BMR', BMR)
-    }
 
-    // Calculate maintenance calories
-    const maintenance = BMR * activityLevelStore[this.state.activityLevelMultiplyer['multiplyer']]
-    handleChange('maintenance', maintenance)
-
-    // Calculate total calories
-    const totalCalories = maintenance + activityLevelStore[this.state.activityLevelCalories['calories']]
-    handleChange('totalCalories', totalCalories)
-
-    // Macro Breakdown
-    const proteinCalories = totalCalories * 0.28
-    const proteinGrams = proteinCalories / 4
-    const carbohydrateCalories = totalCalories * 0.42
-    const carbohydrateGrams = carbohydrateCalories / 4
-    const fatCalories = totalCalories * 0.3
-    const fatGrams = fatCalories / 9
-    handleChange('macros', {
-      proteinCalories,
-      proteinGrams,
-      carbohydrateCalories,
-      carbohydrateGrams,
-      fatCalories,
-      fatGrams
-    })
+  let tempBMR = 0;
+  let tempHeight;
+  let tempWeight;
+  
+  // Convert height to cm
+  if (heightMetric === 'cm') {
+    tempHeight = heightCm
+  } else {
+    tempHeight = heightFeet + heightInches / 12
   }
+
+  // Convert weight to kg
+  if (weightMetric !== 'kg') {
+    tempWeight = weight / 2.2046226218
+  }
+
+  if (gender === 'Male') {
+    tempBMR = 66.47+(13.75 * tempWeight) + (5 * tempHeight) + (6.75 * age);
+    handleChange('BMR', tempBMR)
+  } else {
+    tempBMR = 665.09+(9.56 * tempWeight) + (1.84 * tempHeight) - (4.67 * age)
+    handleChange('BMR', tempBMR)
+  }
+
+  // Calculate maintenance calories
+  const tempMaintenance = tempBMR * activityLevelStore[activityLevelMultiplyer]
+  handleChange('maintenance', tempMaintenance)
+
+  // Calculate total calories
+  const tempTotalCalories = maintenance + activityLevelStore[activityLevelCalories]
+  handleChange('totalCalories', tempTotalCalories)
+
+  // Macro Breakdown
+  const proteinCalories = totalCalories * 0.28
+  const proteinGrams = proteinCalories / 4
+  const carbohydrateCalories = totalCalories * 0.42
+  const carbohydrateGrams = carbohydrateCalories / 4
+  const fatCalories = totalCalories * 0.3
+  const fatGrams = fatCalories / 9
+  handleChange('macros', {
+    proteinCalories,
+    proteinGrams,
+    carbohydrateCalories,
+    carbohydrateGrams,
+    fatCalories,
+    fatGrams
+  })
 
 
   return (
     <div className="align-middle align-justify">
-      <h1>Results</h1>
+      {
+        <h1>{macros.proteinCalories}</h1>
+      }
     </div>
   )
 };

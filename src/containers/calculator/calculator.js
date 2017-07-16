@@ -69,12 +69,30 @@ class Calculator extends Component {
       case 1:
         return <Goal handleChange={this.handleChange} />
       case 2:
-        return <Metrics />
+        return <Metrics 
+          handleChange={this.handleChange}
+          gender={this.state.gender}
+          age={this.state.age}
+          heightFeet={this.state.heightFeet}
+          heightInches={this.state.heightInches}
+          heightCm={this.state.heightCm}
+          heightMetric={this.state.heightMetric}
+          weight={this.state.weight}
+          weightMetric={this.state.weightMetric}
+          macros={this.state.macros}
+          totalCalories={this.state.totalCalories}
+          maintenance={this.state.maintenance}
+          BMR={this.state.BMR}
+        />
     }
   }
 
+<<<<<<< HEAD
 
   handleChange = (type, value, forceNext = false) => {
+=======
+  handleChange = (type, value) => {
+>>>>>>> [fix] change stat algorithm
     const newState = {
       [type]: value
     }
@@ -145,7 +163,21 @@ class Calculator extends Component {
             <Step>
               <StepLabel>Results!</StepLabel>
               <StepContent>
-                <Metrics />
+                <Metrics 
+                  handleChange={this.handleChange}
+                  gender={this.state.gender}
+                  age={this.state.age}
+                  heightFeet={this.state.heightFeet}
+                  heightInches={this.state.heightInches}
+                  heightCm={this.state.heightCm}
+                  heightMetric={this.state.heightMetric}
+                  weight={this.state.weight}
+                  weightMetric={this.state.weightMetric}
+                  macros={this.state.macros}
+                  totalCalories={this.state.totalCalories}
+                  maintenance={this.state.maintenance}
+                  BMR={this.state.BMR}
+                />
                 {this.renderStepActions(2)}
               </StepContent>
             </Step>
