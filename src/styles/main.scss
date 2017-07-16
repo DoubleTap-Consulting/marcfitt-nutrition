@@ -1,7 +1,7 @@
 @import 'settings';
 @import "variables";
 @import "base";
-// @import "typography";
+@import "typography";
 // @import "utilityClasses";
 // @import "buttons";
 @import '../../node_modules/foundation-sites/scss/foundation.scss';
@@ -10,7 +10,7 @@
 // @include foundation-grid;
 @include foundation-flex-grid;
 @include foundation-flex-classes;
-// @include foundation-typography;
+@include foundation-typography;
 // @include foundation-forms;
 // @include foundation-button;
 // @include foundation-accordion;
