@@ -8,7 +8,7 @@ import asyncLoader from '../../shared-components/asyncComponentLoader';
 import './app.css';
 
 const asyncLanding = asyncLoader(() => require('../../containers/landing/landing'));
-const asyncCalculator = asyncLoader(() => require('../../containers/calculator/landcalculatoring'));
+const asyncCalculator = asyncLoader(() => require('../../containers/calculator/calculator'));
 
 class App extends Component {
   static get propTypes() {
@@ -32,6 +32,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+  return {}
 };
 
 export default connect(mapStateToProps)(App);

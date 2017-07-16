@@ -2,13 +2,20 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%); }
+  .landing-container h1 {
+    margin-bottom: 45px; }
+
+.landing-cta {
+  animation: .40s ease-in 0s 1 normal none fadeIn; }
 
 .landing-paragraph {
-  animation: .20s ease-in paragraphFadeIn; }
-  .landing-paragraph-sub1 {
-    animation: .30s ease-in 0s 1 normal none paragraphFadeIn; }
+  animation: .20s ease-in fadeIn; }
+  .landing-paragraph .sub1 {
+    animation: .30s ease-in 0s 1 normal none fadeIn; }
+  .landing-paragraph:last-of-type {
+    margin-bottom: 45px; }
 
-@keyframes paragraphFadeIn {
+@keyframes fadeIn {
   0% {
     opacity: 0;
     transform: translateY(-250px); }
