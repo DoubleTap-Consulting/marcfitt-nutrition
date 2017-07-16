@@ -53,8 +53,14 @@ class Calculator extends Component {
   }
 
 
-  handleChange = (event, index, gender) => {
-    this.setState({gender})
+  handleChange = (type, value, forceNext = false) => {
+    const newState = {
+      [type]: value
+    }
+    this.setState(newState)
+    if (forceNext === true) {
+      this.handleNext();
+    }
   };
 
   renderStepActions(step) {

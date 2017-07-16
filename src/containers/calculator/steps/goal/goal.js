@@ -29,19 +29,24 @@ class Goal extends Component {
     event.preventDefault();
 
     this.setState({
-      open: true,
+      [event.target.innerText]: true,
       anchorEl: event.currentTarget,
     });
   };
 
-  handleRequestClose = () => {
+  handleRequestClose = (event) => {
     this.setState({
-      open: false,
+      BULK: false,
+      CUT: false
     });
   };
 
-  menuItemTapped = () => {
-    
+  maintainButtonTapped = (event) => {
+    this.props.handleChange('goal', event.target.innerText, true);
+  }
+
+  menuItemTapped = (event, menuItem, index) => {
+    this.props.handleChange('goal', menuItem.props.value, true);
   }
 
   render = () => (
@@ -57,20 +62,21 @@ class Goal extends Component {
             style={style.buttonStyle}
           />
           <Popover
-            open={this.state.open}
+            open={this.state.CUT}
             anchorEl={this.state.anchorEl}
-            anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
-            targetOrigin={{horizontal: 'left', vertical: 'top'}}
+            anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
+            targetOrigin={{ horizontal: 'left', vertical: 'top' }}
             onRequestClose={this.handleRequestClose}
           >
-            <Menu>
-              <MenuItem primaryText="Slow" onTouchTap={this.menuItemTapped} />
-              <MenuItem primaryText="Medium" onTouchTap={this.menuItemTapped}  />
-              <MenuItem primaryText="Fast" onTouchTap={this.menuItemTapped}  />
+            <Menu onItemTouchTap={this.menuItemTapped} multiple={false}>
+              <MenuItem primaryText="Slow" value="cutSlow" />
+              <MenuItem primaryText="Medium" value="cutMedium" />
+              <MenuItem primaryText="Fast" value="cutFast" />
             </Menu>
           </Popover>
           <RaisedButton
             label="Maintain"
+            onTouchTap={this.maintainButtonTapped}
             rippleStyle={{ color: '#FDD831' }}
             style={style.buttonStyle}
           />
@@ -81,16 +87,16 @@ class Goal extends Component {
             style={style.buttonStyle}
           />
           <Popover
-            open={this.state.open}
+            open={this.state.BULK}
             anchorEl={this.state.anchorEl}
             anchorOrigin={{horizontal: 'left', vertical: 'bottom'}}
             targetOrigin={{horizontal: 'left', vertical: 'top'}}
             onRequestClose={this.handleRequestClose}
           >
-            <Menu>
-              <MenuItem primaryText="Slow" onTouchTap={this.menuItemTapped}  />
-              <MenuItem primaryText="Medium" onTouchTap={this.menuItemTapped}  />
-              <MenuItem primaryText="Fast" onTouchTap={this.menuItemTapped}  />
+            <Menu onItemTouchTap={this.menuItemTapped}>
+              <MenuItem primaryText="Slow" value="bulkSlow" />
+              <MenuItem primaryText="Medium" value="bulkMedium" />
+              <MenuItem primaryText="Fast" value="bulkFast" />
             </Menu>
           </Popover>
         </div>
