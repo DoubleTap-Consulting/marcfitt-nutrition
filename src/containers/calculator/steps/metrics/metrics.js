@@ -3,11 +3,12 @@ import './metrics.css';
 
 const Metrics = ({ handleChange }) => {
   const calculateBMR = () => {
+    let BMR = 0;
     if (this.state.gender === 'Male') {
-      const BMR = 66.47+(13.75 * this.state.weight) + (5 * this.state.height) + (6.75 * this.state.age);
+      BMR = 66.47+(13.75 * this.state.weight) + (5 * this.state.height) + (6.75 * this.state.age);
         handleChange('BMR', BMR)
     } else {
-      const BMR = 665.09+(9.56 * this.state.weight) + (1.84 * this.state.height) - (4.67 * this.state.age)
+      BMR = 665.09+(9.56 * this.state.weight) + (1.84 * this.state.height) - (4.67 * this.state.age)
       handleChange('BMR', BMR)
     }
 
@@ -16,7 +17,7 @@ const Metrics = ({ handleChange }) => {
     handleChange('maintenance', maintenance)
 
     // Calculate total calories
-    const totalCalories = maintenance + activityLevelCalories
+    const totalCalories = maintenance + this.state.activityLevelCalories
     handleChange('totalCalories', totalCalories)
 
     // Macro Breakdown
