@@ -1,9 +1,9 @@
 @import 'settings';
-@import "variables";
-@import "base";
-@import "typography";
-// @import "utilityClasses";
-// @import "buttons";
+@import 'variables';
+@import 'base';
+@import 'typography';
+// @import 'utilityClasses';
+// @import 'buttons';
 @import 'node_modules/foundation-sites/scss/foundation';
 
 @include foundation-global-styles;
