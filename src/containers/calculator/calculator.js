@@ -87,12 +87,7 @@ class Calculator extends Component {
     }
   }
 
-<<<<<<< HEAD
-
   handleChange = (type, value, forceNext = false) => {
-=======
-  handleChange = (type, value) => {
->>>>>>> [fix] change stat algorithm
     const newState = {
       [type]: value
     }
