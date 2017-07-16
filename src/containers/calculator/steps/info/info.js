@@ -67,12 +67,16 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
       <h1>Personal Information</h1>
       <div className="column">
         <div className="row align-center">
-          <TextField
+          <SelectField
             className="infoContainer-input"
-            hintText="Age"
+            value={age}
             onChange={handleAge}
             style={{width: '140px'}}
-          />
+            maxHeight={200}
+            hintText={'Age'}
+          >
+            { getOptions(4, 80, 'years') }
+          </SelectField>
           <SelectField
             className="infoContainer-input"
             value={gender}
@@ -91,7 +95,7 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
                 className="infoContainer-input"
                 value={heightCm}
                 onChange={handleHeightCm}
-                style={{width: '140px'}}
+                style={{width: '190px'}}
                 maxHeight={200}
                 hintText={'Height'}
               >
@@ -105,9 +109,9 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
                   style={{width: '140px'}}
                   maxHeight={200}
                   hintText={'Feet'}
-                  style={{width: 80}}
+                  style={{width: 90}}
                 >
-                  { getOptions(3, 9, 'feet') }
+                  { getOptions(3, 9, 'ft') }
                 </SelectField>
                 <SelectField
                   className="infoContainer-input"
@@ -116,9 +120,9 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
                   style={{width: '140px'}}
                   maxHeight={200}
                   hintText={'Inches'}
-                  style={{width: 80}}
+                  style={{width: 90}}
                 >
-                  { getOptions(0, 12, 'inches') }
+                  { getOptions(0, 12, 'in') }
                 </SelectField>
               </div>
           }
@@ -128,8 +132,8 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
             onChange={handleHeightMetric}
             style={
               heightMetric === 'cm' ?
-                {width: '110px'} :
-                {width: '80px'}
+                {width: '60px'} :
+                {width: '60px'}
             }
           >
             <MenuItem value={'cm'} primaryText="cm" />
@@ -141,7 +145,7 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
             className="infoContainer-input"
             value={weight}
             onChange={handleWeight}
-            style={{width: '140px'}}
+            style={{width: '190px'}}
             maxHeight={200}
             hintText={'Weight'}
           >
@@ -156,7 +160,7 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
             className="infoContainer-input"
             value={weightMetric}
             onChange={handleWeightMetric}
-            style={{width: '110px'}}
+            style={{width: '60px'}}
           >
             <MenuItem value={'kg'} primaryText="kg" />
             <MenuItem value={'lbs'} primaryText="lbs" />
