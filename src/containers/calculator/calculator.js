@@ -21,7 +21,7 @@ class Calculator extends Component {
 
     this.state = {
       finished: false,
-      stepIndex: 0, 
+      stepIndex: 1, 
       gender: 'Male'
     };
   }
@@ -54,7 +54,6 @@ class Calculator extends Component {
 
 
   handleChange = (event, index, gender) => {
-    console.log('event', event)
     this.setState({gender})
   };
 
