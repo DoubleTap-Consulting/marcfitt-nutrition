@@ -3,7 +3,7 @@
 .landing {
   &-container {
     position: relative;
-    top: 25%;
+    margin-top: 15%;
 
     @include media('<=iphoneplus') {
       top: 10%;

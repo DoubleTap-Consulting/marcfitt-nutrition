@@ -21,8 +21,19 @@ class Calculator extends Component {
 
     this.state = {
       finished: false,
-      stepIndex: 1, 
-      gender: 'Male'
+      stepIndex: 0, 
+      gender: undefined,
+      age: undefined,
+      heightFeet: undefined,
+      heightCm: undefined,
+      heightInches: undefined,
+      heightMetric: 'cm',
+      weight: undefined,
+      weightMetric: 'kg',
+      macros: {},
+      totalCalories: 0,
+      maintenance: 0,
+      BMR: 0
     };
   }
 
@@ -44,23 +55,40 @@ class Calculator extends Component {
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
-        return <Info handleChange={this.handleChange} gender={this.state.gender} />
+        return <Info 
+          handleChange={this.handleChange}
+          gender={this.state.gender}
+          age={this.state.age}
+          heightFeet={this.state.heightFeet}
+          heightInches={this.state.heightInches}
+          heightCm={this.state.heightCm}
+          heightMetric={this.state.heightMetric}
+          weight={this.state.weight}
+          weightMetric={this.state.weightMetric}
+        />
       case 1:
-        return <Goal handleChange={this.handleChange} gender={this.state.gender} />
+        return <Goal handleChange={this.handleChange} />
       case 2:
         return <Metrics />
     }
   }
 
 
+<<<<<<< HEAD
   handleChange = (type, value, forceNext = false) => {
+=======
+  handleChange = (type, value) => {
+>>>>>>> master
     const newState = {
       [type]: value
     }
     this.setState(newState)
+<<<<<<< HEAD
     if (forceNext === true) {
       this.handleNext();
     }
+=======
+>>>>>>> master
   };
 
   renderStepActions(step) {
@@ -95,19 +123,30 @@ class Calculator extends Component {
 
     if (window.matchMedia('screen and (max-width: 568px)').matches) {
       return (
-        <div className="align-center" style={{maxWidth: '400px'}}>
+        <div style={{ width: '100%' }}>
           <Stepper activeStep={stepIndex} orientation="vertical">
             <Step>
               <StepLabel>Tell us about yourself.</StepLabel>
               <StepContent>
-                <Info handleChange={this.handleChange} gender={this.state.gender} />
+                <Info 
+                  handleChange={this.handleChange}
+                  gender={this.state.gender}
+                  age={this.state.age}
+                  heightFeet={this.state.heightFeet}
+                  heightInches={this.state.heightInches}
+                  heightCm={this.state.heightCm}
+                  heightMetric={this.state.heightMetric}
+                  weight={this.state.weight}
+                  weightMetric={this.state.weightMetric}
+                />
                 {this.renderStepActions(0)}
               </StepContent>
             </Step>
             <Step>
               <StepLabel>What are your goals?</StepLabel>
               <StepContent>
-                <Goal handleChange={this.handleChange} gender={this.state.gender} />
+                <Goal handleChange={this.handleChange} />
+                {this.renderStepActions(1)}
               </StepContent>
             </Step>
             <Step>
@@ -171,4 +210,3 @@ class Calculator extends Component {
 }
 
 export default Calculator;
-
