@@ -26,6 +26,10 @@ class Calculator extends Component {
       age: 25,
       height: 120,
       weight: 160,
+      macros: {},
+      totalCalories: 0,
+      maintenance: 0,
+      BMR: 0
     };
   }
 
@@ -178,4 +182,3 @@ class Calculator extends Component {
 }
 
 export default Calculator;
-
