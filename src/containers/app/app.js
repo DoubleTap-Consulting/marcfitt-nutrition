@@ -30,6 +30,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
+  return {};
 };
 
 export default connect(mapStateToProps)(App);
