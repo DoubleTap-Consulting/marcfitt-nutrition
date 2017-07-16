@@ -21,8 +21,8 @@ class App extends Component {
         <Header />
         <div className="app-container row">
           <Switch>
-            <Route path="/" component={asyncLanding} />
             <Route path="/calculator" component={asyncCalculator} />
+            <Route path="/" component={asyncLanding} />
           </Switch>
         </div>
         {/*<Footer />*/}

@@ -1,6 +1,5 @@
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import { cyan500, grey400,
-  grey100, grey500, grey600, darkBlack, white, grey300, fullBlack } from 'material-ui/styles/colors';
+import { cyan500, grey400, grey500, grey600, darkBlack, white, grey300, fullBlack } from 'material-ui/styles/colors';
 
 const muiTheme = getMuiTheme({
   palette: {
