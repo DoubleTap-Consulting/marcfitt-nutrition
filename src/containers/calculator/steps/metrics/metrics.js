@@ -1,4 +1,5 @@
 import React from 'react';
+import MessengerButton from 'react-messenger-plugin';
 import './metrics.css';
 
 const Metrics = ({ handleChange }) => {
@@ -71,6 +72,13 @@ const Metrics = ({ handleChange }) => {
   return (
     <div className="align-middle align-justify">
       <h1>Results</h1>
+      <h5>Never forget the numbers you need</h5>
+      <MessengerButton
+        appId="392898947778748"
+        pageId="141263369788677"
+        passthroughParams="testfromplugin"
+        size="xlarge"
+      />
     </div>
   )
 };
