@@ -131,7 +131,7 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
             maxHeight={200}
             hintText={'Age'}
           >
-            { getOptions(4, 80, 'years') }
+            { getOptions(10, 80, 'years') }
           </SelectField>
           <SelectField
             className="infoContainer-input"

@@ -20,7 +20,7 @@ const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm
   if (heightMetric === 'cm') {
     tempHeight = heightCm
   } else {
-    tempHeight = heightFeet + heightInches / 12
+    tempHeight = (heightFeet + heightInches / 12) * 30.48
   }
 
   // Convert weight to kg
@@ -31,9 +31,9 @@ const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm
   }
 
   if (gender === 'Male') {
-    tempBMR = 66.47+(13.75 * tempWeight) + (5 * tempHeight) + (6.75 * age);
+    tempBMR = 66.47 + (13.75 * tempWeight) + (5 * tempHeight) - (6.75 * age);
   } else {
-    tempBMR = 665.09+(9.56 * tempWeight) + (1.84 * tempHeight) - (4.67 * age)
+    tempBMR = 665.09 + (9.56 * tempWeight) + (1.84 * tempHeight) - (4.67 * age)
   }
 
   // Calculate maintenance calories
