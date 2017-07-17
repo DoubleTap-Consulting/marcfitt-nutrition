@@ -1,4 +1,5 @@
 import React from 'react';
+import MessengerButton from 'react-messenger-plugin';
 import './metrics.css';
 
 const Metrics = ({ handleChange }) => {
@@ -71,6 +72,10 @@ const Metrics = ({ handleChange }) => {
   return (
     <div className="align-middle align-justify">
       <h1>Results</h1>
+      <MessengerButton
+        appId="392898947778748"
+        pageId="141263369788677"
+      />
     </div>
   )
 };
