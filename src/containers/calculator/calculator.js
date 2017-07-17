@@ -36,7 +36,7 @@ class Calculator extends Component {
       BMR: 0, 
       goal: '',
       activityLevel: undefined,
-      activityLevelText: ''
+      activityLevelText: undefined
     };
   }
 
@@ -183,7 +183,7 @@ class Calculator extends Component {
                   maintenance={this.state.maintenance}
                   BMR={this.state.BMR}
                   goal={this.state.goal}
-                  activityLevel={this.state.activityLevel}
+                  activityLevelText={this.state.activityLevel}
                 />
                 {this.renderStepActions(2)}
               </StepContent>

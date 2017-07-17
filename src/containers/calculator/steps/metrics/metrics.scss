@@ -2,7 +2,42 @@
 
 .metricContainer {
   h3, h4 {
-    text-align: left;
+    text-align: center;
+  }
+
+  .totalCalories {
+    color: black;
+    font-size: 80px;
+    font-weight: 400;
+  }
+
+  .leftLine {
+    min-height: 1px;
+    width: 30%;
+    left: 0;
+    background-color: $brand-primary;
+    position: relative;
+    margin-bottom: 65px;
+    margin-top: -65px;
+
+    @media (max-width: 568px) {
+      width: 20%;
+    }
+  }
+
+  .rightLine {
+    min-height: 1px;
+    right: 0;
+    margin-left: auto;
+    width: 30%;
+    background-color: $brand-primary;
+    position: relative;
+    margin-bottom: -55px;
+    margin-top: 55px;
+
+    @media (max-width: 568px) {
+      width: 20%;
+    }
   }
 }
 
@@ -21,23 +56,27 @@
     font-weight: bold;
     font-size: 16px;
     margin-top: 20px;
+    text-align: center;
   }
 
   .number {
     font-size: 70px;
     font-weight: bold;
     margin-top: -25px;
+    text-align: center;
   }
 
   .numberFooter {
     font-size: 12px;
     margin-top: -40px;
+    text-align: center;
   }
 
   .calories {
     font-size: 14px;
     margin-top: -10px;
     font-weight: bold;
+    text-align: center;
   }
 }
 
