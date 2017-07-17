@@ -76,6 +76,7 @@ const Metrics = ({ handleChange }) => {
       <MessengerButton
         appId="392898947778748"
         pageId="141263369788677"
+        size="xlarge"
       />
     </div>
   )
