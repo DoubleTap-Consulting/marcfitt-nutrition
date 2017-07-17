@@ -27,7 +27,7 @@ class Calculator extends Component {
       heightFeet: undefined,
       heightCm: undefined,
       heightInches: undefined,
-      heightMetric: 'in',
+      heightMetric: 'ft',
       weight: undefined,
       weightMetric: 'lbs',
       macros: {},

@@ -76,6 +76,47 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
     }
     return items
   }
+
+  const cmSet = 
+    <SelectField
+      className="infoContainer-input"
+      value={heightCm}
+      onChange={handleHeightCm}
+      style={{ width: '190px' }}
+      maxHeight={300}
+      hintText={'Height'}
+    >
+      {getOptions(80, 240, 'cm')}
+    </SelectField>
+  ;
+
+  const ftSet1 = 
+    <SelectField
+      className="infoContainer-input"
+      value={heightFeet}
+      onChange={handleHeightFeet}
+      style={{ width: '140px' }}
+      maxHeight={300}
+      hintText={'Feet'}
+      style={{ width: 90 }}
+    >
+      {getOptions(3, 9, 'ft')}
+    </SelectField>
+  ;
+
+  const ftSet2 = 
+    <SelectField
+      className="infoContainer-input"
+      value={heightInches}
+      onChange={handleHeightInches}
+      style={{ width: '140px' }}
+      maxHeight={200}
+      hintText={'Inches'}
+      style={{ width: 90 }}
+    >
+      {getOptions(0, 12, 'in')}
+    </SelectField>
+  ;
   
   return (
     <div className="infoContainer align-middle align-justify">
@@ -105,55 +146,34 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
         </div>
         <div className="row align-center">
           {
-            heightMetric === 'cm' ?
-              <SelectField
-                className="infoContainer-input"
-                value={heightCm}
-                onChange={handleHeightCm}
-                style={{width: '190px'}}
-                maxHeight={200}
-                hintText={'Height'}
-              >
-                { getOptions(80, 240, 'cm') }
-              </SelectField> :
-              <div>
-                <SelectField
-                  className="infoContainer-input"
-                  value={heightFeet}
-                  onChange={handleHeightFeet}
-                  style={{width: '140px'}}
-                  maxHeight={200}
-                  hintText={'Feet'}
-                  style={{width: 90}}
-                >
-                  { getOptions(3, 9, 'ft') }
-                </SelectField>
-                <SelectField
-                  className="infoContainer-input"
-                  value={heightInches}
-                  onChange={handleHeightInches}
-                  style={{width: '140px'}}
-                  maxHeight={200}
-                  hintText={'Inches'}
-                  style={{width: 90}}
-                >
-                  { getOptions(0, 12, 'in') }
-                </SelectField>
-              </div>
+            (() => {
+              switch(heightMetric) {
+                case 'cm':
+                  return cmSet;
+                default:
+                  return ftSet1;
+              }
+            })()
+          }
+          {
+            (() => {
+              switch(heightMetric) {
+                case 'cm':
+                  return '';
+                default:
+                  return ftSet2;
+              }
+            })()
           }
           <SelectField
             className="infoContainer-input"
             value={heightMetric}
             onChange={handleHeightMetric}
-            style={
-              heightMetric === 'cm' ?
-                {width: '60px'} :
-                {width: '60px'}
-            }
-          >
-            <MenuItem value={'cm'} primaryText="cm" />
-            <MenuItem value={'ft'} primaryText="ft" />
-          </SelectField>
+            style={{ width: '60px' }}
+            >
+              <MenuItem value={'cm'} primaryText="cm" />
+              <MenuItem value={'ft'} primaryText="ft" />
+            </SelectField>
         </div>
         <div className="row align-center">
           <SelectField
