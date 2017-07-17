@@ -57,6 +57,7 @@ const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm
     fatCalories,
     fatGrams
   }
+  const stringToSend = `${proteinCalories}/${proteinGrams}/${carbohydrateCalories}/${carbohydrateGrams}/${fatCalories}/${fatGrams}`;
 
   return (
     <div className="align-middle align-justify metricContainer">
@@ -82,14 +83,17 @@ const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm
           <p className="calories">({fatCalories} calories)</p>
         </div>
       </div>
-
-      <h5>Never forget the numbers you need</h5>
-      <MessengerButton
-        appId="392898947778748"
-        pageId="141263369788677"
-        passthroughParams="testfromplugin"
-        size="xlarge"
-      />
+      <div className="row align-center text-center">
+        <div className="columns small-12 messenger-container">
+          <h5 className="">Never forget the numbers you need</h5>
+          <MessengerButton
+            appId="392898947778748"
+            pageId="141263369788677"
+            passthroughParams={stringToSend}
+            size="xlarge"
+          />
+        </div>
+      </div>
     </div>
   )
 };

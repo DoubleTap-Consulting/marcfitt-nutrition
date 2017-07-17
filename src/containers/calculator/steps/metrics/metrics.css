@@ -1,4 +1,4 @@
-.metricContainer h3, .metricContainer h4, .metricContainer h5 {
+.metricContainer h3, .metricContainer h4 {
   text-align: left; }
 
 .metricCircles {
@@ -24,3 +24,6 @@
     font-size: 14px;
     margin-top: -10px;
     font-weight: bold; }
+
+.messenger-container div {
+  margin-left: 35px; }
