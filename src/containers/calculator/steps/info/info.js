@@ -170,7 +170,6 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
                 getOptions(70, 300, 'lbs')
             }
           </SelectField>
-          
           <SelectField
             className="infoContainer-input"
             value={weightMetric}
@@ -184,17 +183,17 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
         <div className="row align-center">
           <SelectField
             className="infoContainer-input"
-            value={activityLevelText}
+            value={activityLevel}
             onChange={handleActivityLevel}
             style={{width: '260px', color: 'black'}}
             hintText={'Activity Level'}
             autoWidth={true}
           >
-            <MenuItem id="1.2" value={'1.2'} primaryText="Sedentary (little activity, desk job)" />
-            <MenuItem id="1.35" value={'1.35'} primaryText="Light exercise (3-4 days/week)" />
-            <MenuItem id="1.55" value={'1.55'} primaryText="Moderate exercise (3-5 days/week, 60 minutes/session)" />
-            <MenuItem id="1.725" value={'1.725'} primaryText="Active (6-7 days/week 60-90 min/session)" />
-            <MenuItem id="1.9" value={'1.9'} primaryText="Extremely active individuals such as, heavy manual labor workers" />
+            <MenuItem id="1.2" value={1.2} primaryText="Sedentary (little activity, desk job)" label="Sedentary" />
+            <MenuItem id="1.35" value={1.35} primaryText="Light exercise (3-4 days/week)" label="Light exercise" />
+            <MenuItem id="1.55" value={1.55} primaryText="Moderate exercise (3-5 days/week, 60 minutes/session)" label="Moderate exercise" />
+            <MenuItem id="1.725" value={1.725} primaryText="Active (6-7 days/week 60-90 min/session)" label="Active" />
+            <MenuItem id="1.9" value={1.9} primaryText="Extremely active individuals such as, heavy manual labor workers" label="Extremely active" />
           </SelectField>
         </div>
       </div>
