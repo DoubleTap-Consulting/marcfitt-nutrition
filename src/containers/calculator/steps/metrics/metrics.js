@@ -1,4 +1,5 @@
 import React from 'react';
+import MessengerButton from 'react-messenger-plugin';
 import './metrics.css';
 
 const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm, heightMetric, weight, weightMetric, macros, totalCalories, maintenance, BMR, goal, activityLevel }) => {
@@ -60,7 +61,6 @@ const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm
   return (
     <div className="align-middle align-justify metricContainer">
       <h1>Results</h1>
-
       <h4 style={{width: '1px', wordWrap: 'break-word', position: 'absolute', marginLeft: '-30px' }}>Macros</h4>
       <div className="row align-center">
         <div className="metricCircles">
@@ -82,15 +82,14 @@ const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm
           <p className="calories">({fatCalories} calories)</p>
         </div>
       </div>
-      {/*<div className="row">
-        <p>Protein: {proteinGrams} grams, {proteinCalories} calories</p>
-      </div>
-      <div className="row">
-        <p>Carbohydrates: {carbohydrateGrams} grams, {carbohydrateCalories} calories</p>
-      </div>
-      <div className="row">
-        <p>Fat: {fatGrams} grams, {fatCalories} calories</p>
-      </div>*/}
+
+      <h5>Never forget the numbers you need</h5>
+      <MessengerButton
+        appId="392898947778748"
+        pageId="141263369788677"
+        passthroughParams="testfromplugin"
+        size="xlarge"
+      />
     </div>
   )
 };
