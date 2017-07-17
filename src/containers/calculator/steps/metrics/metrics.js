@@ -61,7 +61,15 @@ const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm
   return (
     <div className="align-middle align-justify metricContainer">
       <h1>Results</h1>
-      <h4 style={{width: '1px', wordWrap: 'break-word', position: 'absolute', marginLeft: '-30px' }}>Macros</h4>
+      <div>
+        <h3>Total Daily Calories</h3>
+
+        <div className="rightLine" />
+        <h3 className="totalCalories">{Math.floor(tempTotalCalories)}</h3>
+        <div className="leftLine" />
+      </div>
+
+      <h3>Macros</h3>
       <div className="row align-center">
         <div className="metricCircles">
           <p className="label">Protein</p>

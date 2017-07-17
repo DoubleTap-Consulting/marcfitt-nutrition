@@ -34,10 +34,22 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
   }
 
   const handleActivityLevel = (event) => {
-    const value = parseInt(event.target.id);
+    let value;
     const text = event.target.innerHTML;
 
-    handleChange('activityLevel', 1.3)
+    if (text === 'Sedentary (little activity, desk job)') {
+      value = 1.2;
+    } else if (text === 'Light exercise (3-4 days/week)') {
+      value = 1.35
+    } else if (text === 'Moderate exercise (3-5 days/week, 60 minutes/session)') {
+      value = 1.55
+    } else if (text === 'Active (6-7 days/week 60-90 min/session)') {
+      value = 1.725
+    } else {
+      value = 1.9
+    }
+
+    handleChange('activityLevel', value)
     handleChange('activityLevelText', text)
   }
 
@@ -174,7 +186,7 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
             className="infoContainer-input"
             value={activityLevelText}
             onChange={handleActivityLevel}
-            style={{width: '260px'}}
+            style={{width: '260px', color: 'black'}}
             hintText={'Activity Level'}
             autoWidth={true}
           >

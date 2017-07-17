@@ -1,5 +1,35 @@
 .metricContainer h3, .metricContainer h4, .metricContainer h5 {
-  text-align: left; }
+  text-align: center; }
+
+.metricContainer .totalCalories {
+  color: black;
+  font-size: 80px;
+  font-weight: 400; }
+
+.metricContainer .leftLine {
+  min-height: 1px;
+  width: 30%;
+  left: 0;
+  background-color: #1787FB;
+  position: relative;
+  margin-bottom: 65px;
+  margin-top: -65px; }
+  @media (max-width: 568px) {
+    .metricContainer .leftLine {
+      width: 20%; } }
+
+.metricContainer .rightLine {
+  min-height: 1px;
+  right: 0;
+  margin-left: auto;
+  width: 30%;
+  background-color: #1787FB;
+  position: relative;
+  margin-bottom: -55px;
+  margin-top: 55px; }
+  @media (max-width: 568px) {
+    .metricContainer .rightLine {
+      width: 20%; } }
 
 .metricCircles {
   background-color: #1787FB;
@@ -12,15 +42,19 @@
   .metricCircles .label {
     font-weight: bold;
     font-size: 16px;
-    margin-top: 20px; }
+    margin-top: 20px;
+    text-align: center; }
   .metricCircles .number {
     font-size: 70px;
     font-weight: bold;
-    margin-top: -25px; }
+    margin-top: -25px;
+    text-align: center; }
   .metricCircles .numberFooter {
     font-size: 12px;
-    margin-top: -40px; }
+    margin-top: -40px;
+    text-align: center; }
   .metricCircles .calories {
     font-size: 14px;
     margin-top: -10px;
-    font-weight: bold; }
+    font-weight: bold;
+    text-align: center; }
