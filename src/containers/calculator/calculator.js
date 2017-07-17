@@ -33,7 +33,10 @@ class Calculator extends Component {
       macros: {},
       totalCalories: 0,
       maintenance: 0,
-      BMR: 0
+      BMR: 0, 
+      goal: '',
+      activityLevel: undefined,
+      activityLevelText: ''
     };
   }
 
@@ -65,6 +68,8 @@ class Calculator extends Component {
           heightMetric={this.state.heightMetric}
           weight={this.state.weight}
           weightMetric={this.state.weightMetric}
+          activityLevel={this.state.activityLevel}
+          activityLevelText={this.state.activityLevelText}
         />
       case 1:
         return <Goal handleChange={this.handleChange} />
@@ -83,6 +88,8 @@ class Calculator extends Component {
           totalCalories={this.state.totalCalories}
           maintenance={this.state.maintenance}
           BMR={this.state.BMR}
+          goal={this.state.goal}
+          activityLevel={this.state.activityLevel}
         />
     }
   }
@@ -109,6 +116,7 @@ class Calculator extends Component {
           primary={true}
           onTouchTap={this.handleNext}
           style={{marginRight: 12}}
+          style={stepIndex === 1 || stepIndex === 2 ? {display: 'none'} : {marginRight: 12} }
         />
         {step > 0 && (
           <FlatButton
@@ -144,6 +152,8 @@ class Calculator extends Component {
                   heightMetric={this.state.heightMetric}
                   weight={this.state.weight}
                   weightMetric={this.state.weightMetric}
+                  activityLevel={this.state.activityLevel}
+                  activityLevelText={this.state.activityLevelText}
                 />
                 {this.renderStepActions(0)}
               </StepContent>
@@ -172,6 +182,8 @@ class Calculator extends Component {
                   totalCalories={this.state.totalCalories}
                   maintenance={this.state.maintenance}
                   BMR={this.state.BMR}
+                  goal={this.state.goal}
+                  activityLevel={this.state.activityLevel}
                 />
                 {this.renderStepActions(2)}
               </StepContent>
@@ -208,6 +220,7 @@ class Calculator extends Component {
                     label={stepIndex === 2 ? 'Finish' : 'Next'}
                     primary={true}
                     onTouchTap={this.handleNext}
+                    style={stepIndex === 1 || stepIndex === 2 ? {display: 'none'} : {}}
                   />
                 </div>
               </div>

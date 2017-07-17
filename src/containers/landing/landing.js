@@ -17,8 +17,8 @@ class Landing extends Component {
           </div>
           <div className="row align-center">
             <div className="columns small-8">
-              <p className="landing-paragraph">The Nutrition Planner is Marc’s revolutionary tool that will allow you to plan your own diet, so you can choose the foods that are most convenient, and taste best to you!</p>
-              <p className="landing-paragraph sub1">You’ll have the ability to calculate your caloric needs with ease, thanks to the built in calorie calculator. Enter your height, weight, goal, and smoothly transition these stats into the Planner so you can begin building your diet.</p>
+              <p className="landing-paragraph">The Nutrition Planner is Marc’s revolutionary program that will give you the tools to reach your fitness goals through a personalized breakdown of your macronutrient and caloric needs.</p>
+              <p className="landing-paragraph sub1">You’ll have the ability to calculate your caloric needs with ease, thanks to the built-in calorie calculator. Enter a few personal statistics and you'll be given all the information you need to begin building your diet.</p>
             </div>
             <div className="columns small-12 text-center">
               <Link to="/calculator">

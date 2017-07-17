@@ -4,7 +4,7 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import './info.css';
 
-const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, weight, weightMetric, handleChange }) => {
+const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, weight, weightMetric, handleChange, activityLevel, activityLevelText }) => {
   const handleGender = (event) => {
     const value = event.target.innerHTML;
     handleChange('gender', value)
@@ -31,6 +31,14 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
     const value = parseInt(event.target.innerHTML);
 
     handleChange('heightCm', value)
+  }
+
+  const handleActivityLevel = (event) => {
+    const value = parseInt(event.target.id);
+    const text = event.target.innerHTML;
+
+    handleChange('activityLevel', 1.3)
+    handleChange('activityLevelText', text)
   }
 
   const handleHeightMetric = (event) => {
@@ -159,6 +167,22 @@ const Info = ({ gender, age, heightFeet, heightInches, heightCm, heightMetric, w
           >
             <MenuItem value={'kg'} primaryText="kg" />
             <MenuItem value={'lbs'} primaryText="lbs" />
+          </SelectField>
+        </div>
+        <div className="row align-center">
+          <SelectField
+            className="infoContainer-input"
+            value={activityLevelText}
+            onChange={handleActivityLevel}
+            style={{width: '260px'}}
+            hintText={'Activity Level'}
+            autoWidth={true}
+          >
+            <MenuItem id="1.2" value={'1.2'} primaryText="Sedentary (little activity, desk job)" />
+            <MenuItem id="1.35" value={'1.35'} primaryText="Light exercise (3-4 days/week)" />
+            <MenuItem id="1.55" value={'1.55'} primaryText="Moderate exercise (3-5 days/week, 60 minutes/session)" />
+            <MenuItem id="1.725" value={'1.725'} primaryText="Active (6-7 days/week 60-90 min/session)" />
+            <MenuItem id="1.9" value={'1.9'} primaryText="Extremely active individuals such as, heavy manual labor workers" />
           </SelectField>
         </div>
       </div>
