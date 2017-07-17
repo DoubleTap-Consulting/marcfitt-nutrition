@@ -27,9 +27,9 @@ class Calculator extends Component {
       heightFeet: undefined,
       heightCm: undefined,
       heightInches: undefined,
-      heightMetric: 'cm',
+      heightMetric: 'ft',
       weight: undefined,
-      weightMetric: 'kg',
+      weightMetric: 'lbs',
       macros: {},
       totalCalories: 0,
       maintenance: 0,
@@ -97,8 +97,8 @@ class Calculator extends Component {
   handleChange = (type, value, forceNext = false) => {
     const newState = {
       [type]: value
-    }
-    this.setState(newState)
+    };
+    this.setState(newState);
     if (forceNext === true) {
       this.handleNext();
     }

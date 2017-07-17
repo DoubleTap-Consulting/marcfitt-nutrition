@@ -57,14 +57,13 @@ const Metrics = ({ handleChange, gender, age, heightFeet, heightInches, heightCm
     fatCalories,
     fatGrams
   }
-  const stringToSend = `${proteinCalories}/${proteinGrams}/${carbohydrateCalories}/${carbohydrateGrams}/${fatCalories}/${fatGrams}`;
+  const stringToSend = `${proteinCalories}/${proteinGrams}/${carbohydrateCalories}/${carbohydrateGrams}/${fatCalories}/${fatGrams}/${Math.round(tempTotalCalories)}`;
 
   return (
     <div className="align-middle align-justify metricContainer">
       <h1>Results</h1>
       <div>
         <h3>Total Daily Calories</h3>
-
         <div className="rightLine" />
         <h3 className="totalCalories">{Math.floor(tempTotalCalories)}</h3>
         <div className="leftLine" />
