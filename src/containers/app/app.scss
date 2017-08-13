@@ -1,7 +1,13 @@
+@import '../../styles/includeMedia';
+
 .app {
   height: 100%;
 
   &-container {
     height: 100%;
+
+    @include media('<iphone') {
+      height: 130%;
+    }
   }
 }

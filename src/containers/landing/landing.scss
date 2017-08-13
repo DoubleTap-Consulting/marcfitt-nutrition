@@ -9,6 +9,10 @@
       top: 10%;
     }
 
+    @include media('<iphone') {
+      top: 0;
+    }
+
     h1 {
       margin-bottom: 45px;
     }

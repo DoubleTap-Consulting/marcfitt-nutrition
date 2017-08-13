@@ -4,6 +4,9 @@
   @media (max-width: 414px) {
     .landing-container {
       top: 10%; } }
+  @media (max-width: 374px) {
+    .landing-container {
+      top: 0; } }
   .landing-container h1 {
     margin-bottom: 45px; }
 
