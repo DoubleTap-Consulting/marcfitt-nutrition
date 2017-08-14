@@ -1,6 +1,6 @@
 const nutritionController = {}
 
-nutritionController.sendStats = (req, res) => {
+nutritionController.sendEmailStats = (req, res) => {
   res.status(200).send({
     message: 'Success'
   })
