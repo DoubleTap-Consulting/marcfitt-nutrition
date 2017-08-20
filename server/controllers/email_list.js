@@ -4,17 +4,16 @@ const request = require('request-promise');
 
 emailListController.addToRiseEmailList = (req, res) => {
   console.log('Performing: add to email list')
+  console.log('body', req.body)
   const config = {
     method: 'POST',
     uri: process.env.RISE_URL,
     body: {
-      "email_address": req.body.email,
+      "email_address": req.body.email_address,
       "status": "subscribed",
       "merge_fields": {
         "BIRTHDAY": req.body.birthday,
-        "GENDER": req.body.gender,
-        "FNAME": req.body.firstName,
-        "LNAME": req.body.lastName
+        "GENDER": req.body.gender
       }
     },
     headers: {
