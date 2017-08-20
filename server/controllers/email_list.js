@@ -3,6 +3,7 @@ const request = require('request-promise');
 
 
 emailListController.addToRiseEmailList = (req, res) => {
+  console.log('Performing: add to email list')
   const config = {
     method: 'POST',
     uri: process.env.RISE_URL,
@@ -25,12 +26,14 @@ emailListController.addToRiseEmailList = (req, res) => {
   request(config)
     .then((status) => {
       res.status(200).send({
-        message: 'Success'
+        message: 'Success',
+        response: status
       })
     })
     .catch((err) => {
       res.status(400).send({
-        message: 'Failure'
+        message: 'Failure',
+        error: err
       })
     });
 }
