@@ -25,15 +25,25 @@ emailListController.addToRiseEmailList = (req, res) => {
   request(config)
     .then((status) => {
       res.status(200).send({
-        message: 'Success',
+        message: 'Added',
         response: status
       })
     })
     .catch((err) => {
-      res.status(400).send({
-        message: 'Failure',
-        error: err
-      })
+      config.method = 'PUT';
+      request(config)
+        .then((status) => {
+          res.status(200).send({
+            message: 'Updated',
+            response: status
+          })
+        })
+        .catch((err) => {
+          res.status(400).send({
+            message: 'Failed to add or update',
+            error: err
+          })
+        });
     });
 }
 
