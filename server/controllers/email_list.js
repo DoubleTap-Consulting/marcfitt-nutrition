@@ -36,7 +36,9 @@ emailListController.addToRiseEmailList = (req, res) => {
 
   request(getConfig)
     .then((status) => {
-      getStatus = 'Updated'
+      if (status.status === 'subscribed') {
+        getStatus = 'Updated'
+      }
       console.log('getStatus', status)
     })
     .catch((err) => {
