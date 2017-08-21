@@ -5,7 +5,18 @@ const MD5 = require('crypto-js/md5');
 emailListController.addToRiseEmailList = (req, res) => {
   console.log('Performing: add to email list')
   const hash = MD5(req.body.email_address.toLowerCase());
-  const config = {
+  let getStatus = 'Added';
+
+  const getConfig = {
+    method: 'GET',
+    uri: process.env.RISE_URL + '/' + hash.toString(),
+    headers: {
+      'Authorization': process.env.RISE_API
+    },
+    json: true
+  }
+
+  const putConfig = {
     method: 'PUT',
     uri: process.env.RISE_URL + '/' + hash.toString(),
     body: {
@@ -22,11 +33,19 @@ emailListController.addToRiseEmailList = (req, res) => {
     json: true
   }
 
-  request(config)
+  request(getConfig)
     .then((status) => {
-      console.log('status', status)
+      getStatus = 'Updated'
+      console.log('getStatus', status)
+    })
+    .catch((err) => {
+      console.log('getError', err)
+    });
+
+  request(putConfig)
+    .then((status) => {
       res.status(200).send({
-        message: 'Added',
+        message: getStatus,
         response: status
       })
     })
