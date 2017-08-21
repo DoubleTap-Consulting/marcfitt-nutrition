@@ -22,6 +22,7 @@ emailListController.addToRiseEmailList = (req, res) => {
     body: {
       "email_address": req.body.email_address,
       "status_if_new": "subscribed",
+      "status": "subscribed",
       "merge_fields": {
         "BIRTHDAY": req.body.birthday,
         "GENDER": req.body.gender
