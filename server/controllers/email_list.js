@@ -5,11 +5,9 @@ const MD5 = require('crypto-js/md5');
 emailListController.addToRiseEmailList = (req, res) => {
   console.log('Performing: add to email list')
   const hash = MD5(req.body.email_address.toLowerCase());
-  console.log('url', process.env.RISE_URL + hash.toString())
-  console.log('RISE_URL', process.env.RISE_URL)
   const config = {
     method: 'PUT',
-    uri: process.env.RISE_URL + hash.toString(),
+    uri: process.env.RISE_URL + '/' + hash.toString(),
     body: {
       "email_address": req.body.email_address,
       "status_if_new": "subscribed",
