@@ -30,7 +30,7 @@ emailListController.addToRiseEmailList = (req, res) => {
       })
     })
     .catch((err) => {
-      config.method = 'PUT';
+      config.method = 'PATCH';
       request(config)
         .then((status) => {
           res.status(200).send({
