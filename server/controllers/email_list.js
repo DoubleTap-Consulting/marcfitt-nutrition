@@ -3,10 +3,9 @@ const request = require('request-promise');
 const MD5 = require('crypto-js/md5');
 
 emailListController.addToRiseEmailList = (req, res) => {
-  console.log('Performing: add to email list')
+  console.log('Performing: add to email list: ', req.body.email)
   const hash = MD5(req.body.email_address.toLowerCase());
   let getStatus = 'Added';
-
   const getConfig = {
     method: 'GET',
     uri: process.env.RISE_URL + '/' + hash.toString(),
@@ -39,25 +38,38 @@ emailListController.addToRiseEmailList = (req, res) => {
       if (status.status === 'subscribed') {
         getStatus = 'Updated'
       }
-      console.log('getStatus', status)
+      console.log('getStatus success', status)
+      request(putConfig)
+        .then((status) => {
+          res.status(200).send({
+            message: getStatus,
+            response: status
+          })
+        })
+        .catch((err) => {
+          console.log('err', err.message)
+          res.status(400).send({
+            message: 'Failed to add or update',
+            error: err
+          })
+        });
     })
     .catch((err) => {
-      console.log('getError', err)
-    });
-
-  request(putConfig)
-    .then((status) => {
-      res.status(200).send({
-        message: getStatus,
-        response: status
-      })
-    })
-    .catch((err) => {
-      console.log('err', err)
-      res.status(400).send({
-        message: 'Failed to add or update',
-        error: err
-      })
+      console.log('getError', err.message)
+      request(putConfig)
+        .then((status) => {
+          res.status(200).send({
+            message: getStatus,
+            response: status
+          })
+        })
+        .catch((err) => {
+          console.log('err', err.message)
+          res.status(400).send({
+            message: 'Failed to add or update',
+            error: err
+          })
+        });
     });
 }
 
