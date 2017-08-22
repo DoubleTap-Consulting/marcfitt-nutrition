@@ -12,7 +12,6 @@ const rootRouter = require('./routers')
 app.use(logger('dev'))
 app.use(bodyParser.json())
 app.use(helmet())
-
 app.use(cors());
 
 app.use('/api', rootRouter)

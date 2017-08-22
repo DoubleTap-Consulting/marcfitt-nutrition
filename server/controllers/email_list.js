@@ -3,7 +3,8 @@ const request = require('request-promise');
 const MD5 = require('crypto-js/md5');
 
 emailListController.addToRiseEmailList = (req, res) => {
-  console.log('------------ Performing: add to email list: ', req.body.email_address, '------------');
+  console.log('------------')
+  console.log('Performing: add to email list: ', req.body.email_address)
   const hash = MD5(req.body.email_address.toLowerCase());
   let getStatus = 'Added';
   const getConfig = {
@@ -42,7 +43,8 @@ emailListController.addToRiseEmailList = (req, res) => {
 
       request(putConfig)
         .then((status) => {
-          console.log('------------Successfully updated contact------------')
+          console.log('Successfully updated contact')
+          console.log('------------')
           res.status(200).send({
             message: getStatus,
             response: status
@@ -50,8 +52,9 @@ emailListController.addToRiseEmailList = (req, res) => {
         })
         .catch((err) => {
           console.log('err', err.message)
+          console.log('------------')
           res.status(400).send({
-            message: '------------Failed to add or update------------',
+            message: 'Failed to add or update',
             error: err
           })
         });
@@ -60,7 +63,8 @@ emailListController.addToRiseEmailList = (req, res) => {
       console.log('getError', err.message)
       request(putConfig)
         .then((status) => {
-          console.log('------------Successfully added contact------------')
+          console.log('Successfully added contact')
+          console.log('------------')
           res.status(200).send({
             message: getStatus,
             response: status
@@ -68,8 +72,9 @@ emailListController.addToRiseEmailList = (req, res) => {
         })
         .catch((err) => {
           console.log('err', err.message)
+          console.log('------------')
           res.status(400).send({
-            message: '------------Failed to add or update------------',
+            message: 'Failed to add or update',
             error: err
           })
         });
