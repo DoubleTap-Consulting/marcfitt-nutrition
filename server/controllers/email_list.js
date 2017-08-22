@@ -39,9 +39,10 @@ emailListController.addToRiseEmailList = (req, res) => {
         getStatus = 'Updated'
       }
       console.log('Found contact with status: ', status.status)
-      
+
       request(putConfig)
         .then((status) => {
+          console.log('Successfully updated contact')
           res.status(200).send({
             message: getStatus,
             response: status
@@ -59,6 +60,7 @@ emailListController.addToRiseEmailList = (req, res) => {
       console.log('getError', err.message)
       request(putConfig)
         .then((status) => {
+          console.log('Successfully added contact')
           res.status(200).send({
             message: getStatus,
             response: status
