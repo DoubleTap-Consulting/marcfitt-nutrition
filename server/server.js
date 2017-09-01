@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const logger = require('morgan')
 const helmet = require('helmet')
 const cors = require('cors')
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 2083
 
 const rootRouter = require('./routers')
 
