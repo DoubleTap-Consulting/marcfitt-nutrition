@@ -3,7 +3,7 @@ const request = require('request-promise');
 const MD5 = require('crypto-js/md5');
 
 emailListController.addToRiseEmailList = (req, res) => {
-  console.log('req.body', req.body)
+  console.log('req.body', req)
   console.log('------------')
   console.log('Performing: add to email list: ', req.body.email_address)
   const hash = MD5(req.body.email_address.toLowerCase());
