@@ -4,6 +4,8 @@ const MD5 = require('crypto-js/md5');
 
 emailListController.addToRiseEmailList = (req, res) => {
   console.log('------------')
+  console.log('req bo', req.body)
+  console.log('req', req)
   console.log('Performing: add to email list: ', req.body.email_address)
   if (!req.body.email_address) {
     res.status(400).send('No email provided')
