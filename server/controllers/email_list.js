@@ -7,7 +7,7 @@ emailListController.addToRiseEmailList = (req, res) => {
   console.log('req bo', req.body)
   console.log('req', req)
   console.log('Performing: add to email list: ', req.body.email_address)
-  response.setHeader('Access-Control-Allow-Origin', '*')
+  res.setHeader('Access-Control-Allow-Origin', '*')
   if (!req.body.email_address) {
     res.status(420).send('No email provided')
   } else {
