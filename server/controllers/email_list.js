@@ -5,13 +5,13 @@ const MD5 = require('crypto-js/md5');
 emailListController.addToRiseEmailList = (req, res) => {
   console.log('------------')
   console.log('req bo', req.body)
-  console.log('req', req)
-  console.log('Performing: add to email list: ', req.body.email_address)
+  console.log('req.query', req.query)
+  console.log('Performing: add to email list: ', req.query.email_address)
   res.setHeader('Access-Control-Allow-Origin', '*')
-  if (!req.body.email_address) {
-    res.status(420).send('No email provided')
+  if (!req.query.email_address) {
+    res.status(400).send('No email provided')
   } else {
-    const hash = MD5(req.body.email_address.toLowerCase());
+    const hash = MD5(req.query.email_address.toLowerCase());
     let getStatus = 'Added';
     const getConfig = {
       method: 'GET',
@@ -26,12 +26,12 @@ emailListController.addToRiseEmailList = (req, res) => {
       method: 'PUT',
       uri: process.env.RISE_URL + '/' + hash.toString(),
       body: {
-        "email_address": req.body.email_address,
+        "email_address": req.query.email_address,
         "status_if_new": "subscribed",
         "status": "subscribed",
         "merge_fields": {
-          "BIRTHDAY": req.body.birthday,
-          "GENDER": req.body.gender
+          "BIRTHDAY": req.query.birthday,
+          "GENDER": req.query.gender
         }
       },
       headers: {
