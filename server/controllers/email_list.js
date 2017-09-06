@@ -51,7 +51,7 @@ emailListController.addToRiseEmailList = (req, res) => {
           .then((status) => {
             console.log('Successfully updated contact')
             console.log('------------')
-            res.status(200).send({
+            res.status(200).json({
               message: getStatus,
               response: status
             })
@@ -59,7 +59,7 @@ emailListController.addToRiseEmailList = (req, res) => {
           .catch((err) => {
             console.log('err', err.message)
             console.log('------------')
-            res.status(400).send({
+            res.status(400).json({
               message: 'Failed to add or update',
               error: err
             })
@@ -71,7 +71,7 @@ emailListController.addToRiseEmailList = (req, res) => {
           .then((status) => {
             console.log('Successfully added contact')
             console.log('------------')
-            res.status(200).send({
+            res.status(200).json({
               message: getStatus,
               response: status
             })
@@ -79,7 +79,7 @@ emailListController.addToRiseEmailList = (req, res) => {
           .catch((err) => {
             console.log('err', err.message)
             console.log('------------')
-            res.status(400).send({
+            res.status(400).json({
               message: 'Failed to add or update',
               error: err
             })
