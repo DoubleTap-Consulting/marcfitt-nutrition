@@ -24,7 +24,7 @@ emailListController.addToRiseEmailList = (req, res) => {
   
     const putConfig = {
       method: 'PUT',
-      uri: process.env.RISE_URL + '/' + hash.toString(),
+      uri: 'https://us16.api.mailchimp.com/3.0/lists/cd73f50330/members' + '/' + hash.toString(),
       body: {
         "email_address": req.query.email_address,
         "status_if_new": "subscribed",
