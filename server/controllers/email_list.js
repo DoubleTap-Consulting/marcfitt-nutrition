@@ -4,9 +4,10 @@ const MD5 = require('crypto-js/md5');
 
 emailListController.addToRiseEmailList = (req, res) => {
   console.log('------------')
+  console.log('time: ', Date.now())
   console.log('req bo', req.body)
   console.log('req.query', req.query)
-  console.log('Performing: add to email list: ', req.query.email_address)
+  console.log('Performing: add to email list: ', req.query.email_address, ' at ', Date.now())
   res.setHeader('Access-Control-Allow-Origin', '*')
   if (!req.query.email_address) {
     res.status(400).send('No email provided')
@@ -15,13 +16,13 @@ emailListController.addToRiseEmailList = (req, res) => {
     let getStatus = 'Added';
     const getConfig = {
       method: 'GET',
-      uri: process.env.RISE_URL + '/' + hash.toString(),
+      uri: 'https://us16.api.mailchimp.com/3.0/lists/cd73f50330/members/' + hash.toString(),
       headers: {
         'Authorization': process.env.RISE_API
       },
       json: true
     }
-  
+
     const putConfig = {
       method: 'PUT',
       uri: 'https://us16.api.mailchimp.com/3.0/lists/cd73f50330/members' + '/' + hash.toString(),
@@ -39,14 +40,14 @@ emailListController.addToRiseEmailList = (req, res) => {
       },
       json: true
     }
-  
+
     request(getConfig)
       .then((status) => {
         if (status.status === 'subscribed') {
           getStatus = 'Updated'
         }
         console.log('Found contact with status: ', status.status)
-  
+
         request(putConfig)
           .then((status) => {
             console.log('Successfully updated contact')
